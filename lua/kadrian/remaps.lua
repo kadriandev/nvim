@@ -7,7 +7,6 @@ function Map(mode, lhs, rhs, opts)
 end
 
 Map("n", "<Esc>", "<cmd>noh<cr>")
-Map("i", "jk", "<esc>")
 
 Map("n", "<leader>w", "<cmd>w<cr>")
 
@@ -30,7 +29,6 @@ Map("n", "J", "mzJ`z")
 Map("n", "n", "nzzzv")
 Map("n", "N", "Nzzzv")
 
-Map("n", "`", "<cmd>lua require'hop'.hint_words()<cr>")
 Map("n", "<leader>/", function()
 	require("Comment.api").toggle.linewise.current()
 end)
