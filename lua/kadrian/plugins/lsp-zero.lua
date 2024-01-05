@@ -59,19 +59,19 @@ return {
 							name = "Typescript",
 						},
 					})
-					Map(
+					Keymap(
 						"n",
 						"<leader>tm",
 						"<cmd>TypescriptAddMissingImports<cr>",
 						{ buffer = bufnr, desc = "Add Missing Imports" }
 					)
-					Map(
+					Keymap(
 						"n",
 						"<leader>to",
 						"<cmd>TypescriptOrganizeImports<cr>",
 						{ buffer = bufnr, desc = "Organize Imports" }
 					)
-					Map(
+					Keymap(
 						"n",
 						"<leader>tr",
 						"<cmd>TypescriptRemoveUnused<cr>",

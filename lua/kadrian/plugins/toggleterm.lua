@@ -55,7 +55,7 @@ return {
 			end
 		end
 
-		Map("n", "<C-t>", "<cmd>lua ToggleTerminal('term')<cr>")
-		Map("n", "<leader>gg", "<cmd>lua ToggleTerminal('lazygit')<cr>")
+		Keymap("n", "<C-t>", "<cmd>lua ToggleTerminal('term')<cr>")
+		Keymap("n", "<leader>gg", "<cmd>lua ToggleTerminal('lazygit')<cr>")
 	end,
 }

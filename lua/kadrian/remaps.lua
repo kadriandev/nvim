@@ -1,37 +1,40 @@
-function Map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true, desc = "which_key_ignore" }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.keymap.set(mode, lhs, rhs, options)
-end
+Keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
-Map("n", "<Esc>", "<cmd>noh<cr>")
+Keymap("n", "<Esc>", "<cmd>noh<cr>", opts)
+Keymap("n", "<leader>qq", ":qa<cr>", opts)
+Keymap("n", "<leader>w", ":w<cr>", opts)
+Keymap("n", "<leader>x", ":x<cr>", opts)
 
-Map("n", "<leader>w", "<cmd>w<cr>")
+Keymap("i", "<C-h>", "<Left>", opts)
+Keymap("i", "<C-l>", "<Right>", opts)
+Keymap("i", "<C-j>", "<Down>", opts)
+Keymap("i", "<C-k>", "<Up>", opts)
 
-Map("n", "<leader>qq", "<cmd>qa<cr>")
+Keymap("n", "<C-u>", "<C-u>zz", opts)
+Keymap("n", "<C-d>", "<C-d>zz", opts)
 
-Map("n", "<leader>x", "<cmd>bd<cr>")
+Keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
+Keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
-Map("i", "<C-h>", "<Left>")
-Map("i", "<C-l>", "<Right>")
-Map("i", "<C-j>", "<Down>")
-Map("i", "<C-k>", "<Up>")
+Keymap("x", "p", [[ "_dP]])
 
-Map("n", "<C-u>", "<C-u>zz")
-Map("n", "<C-d>", "<C-d>zz")
+Keymap("n", "J", "mzJ`z", opts)
+Keymap("n", "n", "nzzzv", opts)
+Keymap("n", "N", "Nzzzv", opts)
+Keymap("n", "g*", "g*zz", opts)
+Keymap("n", "g#", "g#zz", opts)
 
-Map("v", "J", ":m '>+1<CR>gv=gv")
-Map("v", "K", ":m '<-2<CR>gv=gv")
+Keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
+Keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
 
-Map("n", "J", "mzJ`z")
-Map("n", "n", "nzzzv")
-Map("n", "N", "Nzzzv")
+Keymap("v", ">", ">gv", opts)
+Keymap("v", "<", "<gv", opts)
 
-Map("n", "<leader>/", function()
+Keymap("n", "<s-h>", "^", opts)
+Keymap("n", "<s-l>", "g_", opts)
+
+Keymap("n", "<leader>/", function()
 	require("Comment.api").toggle.linewise.current()
 end)
-Map("v", "<leader>/", function()
-	require("Comment.api").toggle.blockwise.current()
-end)
+Keymap("x", "<leader>/", "gbc", opts)

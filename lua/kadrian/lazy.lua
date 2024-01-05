@@ -13,32 +13,31 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    { import = "kadrian.plugins" },
+	{ import = "kadrian.plugins" },
 }
 
 local opts = {
-    change_detection = {
-        enabled = true,
-        notify = false,
-    },
-    performance = {
-        rtp = {
-            disabled_plugins = {
-                "gzip",
-                "man",
-                "matchit",
-                "netrwPlugin",
-                "rplugin",
-                "shada",
-                "spellfile",
-                "tarPlugin",
-                "tohtml",
-                "tutor",
-                "zipPlugin",
-            },
-        },
-    },
+	change_detection = {
+		enabled = true,
+		notify = true,
+	},
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"man",
+				"matchit",
+				"netrwPlugin",
+				"rplugin",
+				"shada",
+				"spellfile",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
 }
-
 
 require("lazy").setup(plugins, opts)

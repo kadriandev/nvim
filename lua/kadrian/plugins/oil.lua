@@ -7,7 +7,7 @@ return {
 		local width = 80
 		local height = 30
 
-		Map("n", "<leader>e", "<cmd>lua require('oil').toggle_float(nil)<cr>")
+		Keymap("n", "<leader>e", "<cmd>lua require('oil').toggle_float(nil)<cr>", {})
 
 		require("oil").setup({
 			float = {

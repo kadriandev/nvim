@@ -4,10 +4,12 @@ return {
 		opts = {},
 		config = true,
 	},
-	{ "cohama/lexima.vim" },
 	{
 		"weilbith/nvim-code-action-menu",
 		cmd = "CodeActionMenu",
+		config = function()
+			Keymap("n", "<leader>ca", "<cmd>CodeActionMenu")
+		end,
 	},
 	{
 		"numToStr/Comment.nvim",
@@ -16,11 +18,6 @@ return {
 		end,
 	},
 
-	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {},
-	},
 	{ "folke/neodev.nvim", opts = {} },
 	{
 		"kylechui/nvim-surround",
@@ -54,5 +51,11 @@ return {
 			})
 		end,
 		lazy = false,
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
 	},
 }
