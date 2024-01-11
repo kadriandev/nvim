@@ -40,7 +40,6 @@ return {
 		Keymap("n", "<leader>fg", builtin.git_files, {})
 		Keymap("n", "<leader>fb", builtin.buffers, {})
 		Keymap("n", "<leader>vh", builtin.help_tags, {})
-		Keymap("n", "<C->", builtin.git_files)
 		Keymap("n", "<leader>fs", function()
 			local word = vim.fn.expand("<cword>")
 			builtin.grep_string({ search = word })

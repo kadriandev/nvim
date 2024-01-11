@@ -4,20 +4,22 @@ return {
 		opts = {},
 		config = true,
 	},
-	{
-		"weilbith/nvim-code-action-menu",
-		cmd = "CodeActionMenu",
-		config = function()
-			Keymap("n", "<leader>ca", "<cmd>CodeActionMenu")
-		end,
-	},
+  {
+    "aznhe21/actions-preview.nvim",
+    config = function()
+        require("actions-preview").setup({
+          backend = { "telescope"}
+        })
+        Keymap({"n", "v"}, "<leader>ca", require("actions-preview").code_actions)
+        -- vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
+    end,
+  },
 	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()
 		end,
 	},
-
 	{ "folke/neodev.nvim", opts = {} },
 	{
 		"kylechui/nvim-surround",

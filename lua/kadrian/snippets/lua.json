@@ -1,0 +1,17 @@
+{
+  "plugin (lazy)": {
+    "body": [
+      "return {",
+      "\t\"${1:}\",",
+      "\tversion =\"${2:}\",",
+      "  dependencies = {",
+      "    \"${3:}\", -- optional",
+      "  },",
+      "  config = function()",
+      "    ${4:}",
+      "  end",
+      "}"
+    ],
+    "prefix": "plugin (lazy)"
+  }
+}

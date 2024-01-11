@@ -1,9 +1,9 @@
 Keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-Keymap("n", "<Esc>", "<cmd>noh<cr>", opts)
+    Keymap("n", "<Esc>", "<cmd>noh<cr>", opts)
 Keymap("n", "<leader>qq", ":qa<cr>", opts)
-Keymap("n", "<leader>w", ":w<cr>", opts)
+   Keymap("n", "<leader>w", ":w<cr>", opts)
 Keymap("n", "<leader>x", ":x<cr>", opts)
 
 Keymap("i", "<C-h>", "<Left>", opts)
@@ -35,6 +35,6 @@ Keymap("n", "<s-h>", "^", opts)
 Keymap("n", "<s-l>", "g_", opts)
 
 Keymap("n", "<leader>/", function()
-	require("Comment.api").toggle.linewise.current()
+  require("Comment.api").toggle.linewise.current()
 end)
 Keymap("x", "<leader>/", "gbc", opts)
