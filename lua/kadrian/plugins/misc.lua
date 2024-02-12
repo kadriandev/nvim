@@ -4,16 +4,17 @@ return {
 		opts = {},
 		config = true,
 	},
-  {
-    "aznhe21/actions-preview.nvim",
-    config = function()
-        require("actions-preview").setup({
-          backend = { "telescope"}
-        })
-        Keymap({"n", "v"}, "<leader>ca", require("actions-preview").code_actions)
-        -- vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
-    end,
-  },
+	{
+		"aznhe21/actions-preview.nvim",
+		config = function()
+			require("actions-preview").setup({
+				diff = { ctxlen = 3 },
+				backend = { "telescope" },
+			})
+			Keymap({ "n", "v" }, "<leader>ca", require("actions-preview").code_actions)
+			-- vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
+		end,
+	},
 	{
 		"numToStr/Comment.nvim",
 		config = function()
@@ -26,7 +27,7 @@ return {
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
 		config = function()
-			require("nvim-surround").setup({})
+			require("nvim-surround").setup()
 		end,
 	},
 
@@ -47,7 +48,7 @@ return {
 					down = "<C-j>",
 					up = "<C-k>",
 					right = "<C-l>",
-					last_active = "<C-\\>",
+					-- last_active = "<C-\\>",
 					next = "<C-Space>",
 				},
 			})

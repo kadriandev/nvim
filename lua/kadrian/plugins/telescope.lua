@@ -8,9 +8,6 @@ return {
 	config = function()
 		require("telescope").setup({
 			defaults = {
-				-- mappings = {
-				-- 	["<C-q>"] = require("telescope.actions").smart_send_to_qflist,
-				-- },
 				file_ignore_patterns = { "^./.git/", "^node_modules/" },
 			},
 			pickers = {

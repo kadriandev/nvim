@@ -11,28 +11,37 @@ return {
 		"hrsh7th/nvim-cmp",
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
-	  "L3MON4D3/LuaSnip",
+		"L3MON4D3/LuaSnip",
+		"pmizio/typescript-tools.nvim",
 	},
 	config = function()
 		require("fidget").setup({})
-		require("mason").setup()
+		require("mason").setup({})
 		require("mason-lspconfig").setup({
 			ensure_installed = { "lua_ls", "rust_analyzer", "tsserver" },
 			handlers = {
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
 				end,
-        ["lua_ls"] = function ()
-          require("lspconfig").lua_ls.setup({
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { "vim" }
-                }
-              }
-            }
-          })
-        end
+				["tsserver"] = function()
+					require("typescript-tools").setup({
+						settings = {
+							expose_as_code_action = { "all" },
+							jsx_close_tag = { enable = true, filetypes = { "javascriptreact", "typescriptreact" } },
+						},
+					})
+				end,
+				["lua_ls"] = function()
+					require("lspconfig").lua_ls.setup({
+						settings = {
+							Lua = {
+								diagnostics = {
+									globals = { "vim" },
+								},
+							},
+						},
+					})
+				end,
 			},
 		})
 
@@ -43,12 +52,7 @@ return {
 					require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 				end,
 			},
-			window = {
-				-- completion = cmp.config.window.bordered(),
-				-- documentation = cmp.config.window.bordered(),
-			},
 			mapping = cmp.mapping.preset.insert({
-
 				["<C-n>"] = cmp.mapping.select_next_item(),
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
