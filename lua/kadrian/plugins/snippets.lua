@@ -20,7 +20,7 @@ return {
 					cancel = "q",
 					saveChanges = "<CR>", -- alternatively, can also use `:w`
 					goBackToSearch = "<BS>",
-					delete = "<C-x>",
+					deleteSnippet = "<C-x>",
 					openInFile = "<C-o>",
 					insertNextToken = "<C-t>", -- insert & normal mode
 					jumpBetweenBodyAndPrefix = "<C-Tab>", -- insert & normal mode
