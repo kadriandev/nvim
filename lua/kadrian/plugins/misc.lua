@@ -10,9 +10,24 @@ return {
 			require("actions-preview").setup({
 				diff = { ctxlen = 3 },
 				backend = { "telescope" },
+				telescope = {
+					sorting_strategy = "ascending",
+					layout_strategy = "vertical",
+					layout_config = {
+						width = 0.8,
+						height = 0.9,
+						prompt_position = "top",
+						preview_cutoff = 20,
+						preview_height = function(_, _, max_lines)
+							return max_lines - 15
+						end,
+					},
+				},
 			})
-			Keymap({ "n", "v" }, "<leader>ca", require("actions-preview").code_actions)
-			-- vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
+			Keymap({ "v", "n" }, "<leader>ca", require("actions-preview").code_actions, { desc = "Code Actions" })
+			Keymap({ "n", "v" }, "<leader>cA", function()
+				require("actions-preview").code_actions({ context = { only = { "source" } } })
+			end, { desc = "Code Actions (File)" })
 		end,
 	},
 	{
@@ -59,6 +74,13 @@ return {
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
+		end,
+	},
+	{
+		"sindrets/diffview.nvim",
+		config = function()
+			Keymap("n", "<leader>do", "<cmd>DiffviewOpen<cr>", { desc = "Open" })
+			Keymap("n", "<leader>dc", "<cmd>DiffviewClose<cr>", { desc = "Close" })
 		end,
 	},
 }

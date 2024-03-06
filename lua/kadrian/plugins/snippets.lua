@@ -31,9 +31,9 @@ return {
 		-- When used in visual mode prefills the selection as body.
 		Keymap({ "n", "x" }, "<leader>sa", function()
 			require("scissors").addNewSnippet()
-		end)
+		end, { desc = "Add Snippet" })
 		Keymap("n", "<leader>se", function()
 			require("scissors").editSnippet()
-		end)
+		end, { desc = "Edit Snippet" })
 	end,
 }

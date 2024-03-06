@@ -77,13 +77,14 @@ return {
 			end
 		end
 
-		Keymap("n", "<C-t>", function()
-			if vim.v.count > 0 then
+		Keymap("n", "<leader>tt", function()
+			if vim.v.count == 0 then
+				return "<cmd>1ToggleTerm<cr>"
+			elseif vim.v.count > 0 then
 				return "<cmd>" .. vim.v.count .. "ToggleTerm<cr>"
-			else
-				return "<cmd>ToggleTermToggleAll<cr>"
 			end
-		end, { expr = true })
-		Keymap("n", "<leader>gg", "<cmd>lua ToggleTerminal('lazygit')<cr>")
+		end, { expr = true, desc = "Toggle" })
+		Keymap("n", "<C-t>", "<cmd>ToggleTermToggleAll<cr>")
+		Keymap("n", "<leader>tg", "<cmd>lua ToggleTerminal('lazygit')<cr>", { desc = "Lazygit" })
 	end,
 }

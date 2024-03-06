@@ -26,7 +26,9 @@ return {
 				["tsserver"] = function()
 					require("typescript-tools").setup({
 						settings = {
-							expose_as_code_action = { "all" },
+							expose_as_code_action = "all",
+							separate_diagnostic_server = true,
+							complete_function_calls = true,
 							jsx_close_tag = { enable = true, filetypes = { "javascriptreact", "typescriptreact" } },
 						},
 					})

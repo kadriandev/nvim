@@ -1,10 +1,8 @@
 Keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-Keymap("n", "<Esc>", "<cmd>noh<cr>", opts)
-Keymap("n", "<leader>qq", "<cmd>qa<cr>", opts)
-Keymap("n", "<leader>w", "<cmd>w!<cr>", opts)
-Keymap("n", "<leader>x", "<cmd>x<cr>", opts)
+Keymap("n", "<leader>x", "<cmd>x<cr>", { silent = true, desc = "which_key_ignore" })
+Keymap("n", "<leader>qq", "<cmd>wqa<cr>", { silent = true, desc = "which_key_ignore" })
 
 Keymap("i", "<C-h>", "<Left>", opts)
 Keymap("i", "<C-l>", "<Right>", opts)
@@ -33,11 +31,6 @@ Keymap("v", "<", "<gv", opts)
 
 Keymap("n", "<s-h>", "^", opts)
 Keymap("n", "<s-l>", "g_", opts)
-
-Keymap("n", "<leader>/", function()
-	require("Comment.api").toggle.linewise.current()
-end)
-Keymap("x", "<leader>/", "gbc", opts)
 
 -- Global LSP Keymaps
 Keymap("n", "gl", vim.diagnostic.open_float)

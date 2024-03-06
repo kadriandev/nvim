@@ -33,6 +33,6 @@ return {
 			},
 		})
 
-		Keymap("n", "<leader>e", "<cmd>lua require('oil').toggle_float(nil)<cr>", {})
+		Keymap("n", "<leader>e", "<cmd>lua require('oil').toggle_float(nil)<cr>", { desc = "which_key_ignore" })
 	end,
 }
