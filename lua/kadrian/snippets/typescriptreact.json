@@ -1,0 +1,35 @@
+{
+  "FormField": {
+    "body": [
+      "<FormField",
+      "  control={methods.control}",
+      "  name=\"${1:name}\"",
+      "  render={({ field }) => (",
+      "    <FormItem>",
+      "      <FormLabel>${2:label}</FormLabel>",
+      "      <FormControl>",
+      "        <Textarea {...field} />",
+      "      </FormControl>",
+      "    </FormItem>",
+      "  )}",
+      "/>"
+    ],
+    "prefix": "FormField"
+  },
+  "rafce": {
+    "body": [
+      "type ${1:ComponentName}Props = {",
+      "    prop: string;",
+      "}",
+      "export const ${1:} = (props: ${1:}Props) => {",
+      "    const { prop } = props;",
+      "    return (",
+      "        <div>",
+      "            {prop}",
+      "        </div>",
+      "    );",
+      "}"
+    ],
+    "prefix": "rafce"
+  }
+}

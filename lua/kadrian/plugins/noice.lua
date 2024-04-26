@@ -1,5 +1,5 @@
 return {
-	"folke/noice.nvim",
+    "folke/noice.nvim",
 	event = "VeryLazy",
 	opts = {
 		-- add any options here
@@ -9,6 +9,7 @@ return {
 		"rcarriga/nvim-notify",
 	},
 	config = function()
+        require("notify").setup({ background_colour = "#FFFFFF" } )
 		require("noice").setup({
 			lsp = {
 				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
