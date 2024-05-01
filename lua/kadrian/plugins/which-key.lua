@@ -16,9 +16,8 @@ return {
 			c = { name = "Code" },
 			g = {
 				name = "Git",
-				b = { name = "Blame" },
+				d = { name = "Diffview" },
 			},
-			d = { name = "Diff View" },
 			s = { name = "Snippets" },
 			n = { name = "Noice" },
 			q = { name = "which_key_ignore" },
