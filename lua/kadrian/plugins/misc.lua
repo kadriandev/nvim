@@ -70,17 +70,4 @@ return {
 		end,
 		lazy = false,
 	},
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
-		end,
-	},
-	{
-		"sindrets/diffview.nvim",
-		config = function()
-			Keymap("n", "<leader>do", "<cmd>DiffviewOpen<cr>", { desc = "Open" })
-			Keymap("n", "<leader>dc", "<cmd>DiffviewClose<cr>", { desc = "Close" })
-		end,
-	},
 }
