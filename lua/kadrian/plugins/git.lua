@@ -2,7 +2,9 @@ return {
 	{
 		"tpope/vim-fugitive",
 		config = function()
-			Keymap("n", "<leader>gg", "<cmd>Git<cr>", { desc = "Open Git" })
+			Keymap("n", "<leader>gg", "<cmd>G<cr>", { desc = "Open Git" })
+			Keymap("n", "<leader>gs", "<cmd>G status<cr>", { desc = "Status" })
+			Keymap("n", "<leader>gp", "<cmd>G push<cr>", { desc = "Push" })
 		end,
 	},
 	{

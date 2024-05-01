@@ -14,6 +14,10 @@ return {
 			f = { name = "Find" },
 			t = { name = "Terminal" },
 			c = { name = "Code" },
+			g = {
+				name = "Git",
+				b = { name = "Blame" },
+			},
 			d = { name = "Diff View" },
 			s = { name = "Snippets" },
 			n = { name = "Noice" },
