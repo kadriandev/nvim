@@ -27,12 +27,15 @@ return {
 				["gh"] = "actions.toggle_hidden",
 			},
 			view_options = {
+				is_hidden_file = function(name, bufnr)
+					return vim.startswith(name, ".") and not string.match(name, ".env*")
+				end,
 				is_always_hidden = function(name, _)
 					return name == ".DS_Store"
 				end,
 			},
 		})
 
-		Keymap("n", "<leader>e", "<cmd>lua require('oil').toggle_float(nil)<cr>", { desc = "which_key_ignore" })
+		Keymap("n", "<leader>e", "<cmd>Oil<cr>", { desc = "which_key_ignore" })
 	end,
 }

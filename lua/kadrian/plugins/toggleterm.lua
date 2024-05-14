@@ -41,42 +41,6 @@ return {
 		})
 
 		vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
-
-		local Terminal = require("toggleterm.terminal").Terminal
-		local lazygit = Terminal:new({
-			cmd = "lazygit",
-			count = 5,
-			dir = "git_dir",
-			direction = "float",
-			float_opts = {
-				border = "double",
-			},
-			-- function to run on opening the terminal
-			on_open = function(term)
-				vim.cmd("startinsert!")
-				vim.api.nvim_buf_set_keymap(
-					term.bufnr,
-					"t",
-					"<C-t>",
-					"<cmd>close<CR>",
-					{ noremap = true, silent = true }
-				)
-			end,
-			-- function to run on closing the terminal
-			on_close = function(_)
-				vim.cmd("startinsert!")
-			end,
-			hidden = true,
-		})
-
-		function ToggleTerminal(term)
-			if term == "lazygit" then
-				lazygit:toggle()
-			elseif term == "term" then
-				-- floatTerm:toggle()
-			end
-		end
-
 		Keymap("n", "<leader>tt", function()
 			if vim.v.count == 0 then
 				return "<cmd>1ToggleTerm<cr>"
@@ -85,6 +49,5 @@ return {
 			end
 		end, { expr = true, desc = "Toggle" })
 		Keymap("n", "<C-t>", "<cmd>ToggleTermToggleAll<cr>")
-		Keymap("n", "<leader>tg", "<cmd>lua ToggleTerminal('lazygit')<cr>", { desc = "Lazygit" })
 	end,
 }

@@ -6,7 +6,11 @@ return {
 			"sindrets/diffview.nvim", -- optional - Diff integration
 			"nvim-telescope/telescope.nvim", -- optional
 		},
-		config = true,
+		config = function()
+			require("neogit").setup()
+			Keymap("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit" })
+			Keymap("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", { desc = "Open Diffview" })
+		end,
 	},
 	{
 		"FabijanZulj/blame.nvim",
@@ -18,38 +22,12 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
-			require("gitsigns").setup()
+			local gitsigns = require("gitsigns")
+			gitsigns.setup()
+			Keymap("n", "<leader>hb", function()
+				gitsigns.blame_line({ full = true })
+			end)
+			Keymap("n", "<leader>tb", gitsigns.toggle_current_line_blame)
 		end,
 	},
 }
-
--- return {
--- 	{
--- 		"tpope/vim-fugitive",
--- 		config = function()
--- 			Keymap("n", "<leader>gg", "<cmd>G<cr>", { desc = "Open Git" })
--- 			Keymap("n", "<leader>gs", "<cmd>G status<cr>", { desc = "Status" })
--- 			Keymap("n", "<leader>gp", "<cmd>G push<cr>", { desc = "Push" })
--- 		end,
--- 	},
--- 	{
--- 		"FabijanZulj/blame.nvim",
--- 		config = function()
--- 			require("blame").setup()
--- 			Keymap("n", "<leader>gb", "<cmd>BlameToggle<cr>", { desc = "Toggle Git Blame" })
--- 		end,
--- 	},
--- 	{
--- 		"lewis6991/gitsigns.nvim",
--- 		config = function()
--- 			require("gitsigns").setup()
--- 		end,
--- 	},
--- 	{
--- 		"sindrets/diffview.nvim",
--- 		config = function()
--- 			Keymap("n", "<leader>gdo", "<cmd>DiffviewOpen<cr>", { desc = "Open" })
--- 			Keymap("n", "<leader>gdc", "<cmd>DiffviewClose<cr>", { desc = "Close" })
--- 		end,
--- 	},
--- }
