@@ -5,9 +5,6 @@ Keymap("n", "<leader>x", "<cmd>x<cr>", { silent = true, desc = "which_key_ignore
 Keymap("n", "<leader>X", "<cmd>tabclose<cr>", { silent = true, desc = "which_key_ignore" })
 Keymap("n", "<leader>qq", "<cmd>wqa<cr>", { silent = true, desc = "which_key_ignore" })
 
-Keymap("n", "<leader>vs", "<cmd>vsplit<cr>", { silent = true, desc = "which_key_ignore" })
-Keymap("n", "<leader>hs", "<cmd>split<cr>", { silent = true, desc = "which_key_ignore" })
-
 Keymap("i", "<C-h>", "<Left>", opts)
 Keymap("i", "<C-l>", "<Right>", opts)
 Keymap("i", "<C-j>", "<Down>", opts)

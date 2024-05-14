@@ -24,10 +24,10 @@ return {
 		config = function()
 			local gitsigns = require("gitsigns")
 			gitsigns.setup()
-			Keymap("n", "<leader>hb", function()
-				gitsigns.blame_line({ full = true })
-			end)
-			Keymap("n", "<leader>tb", gitsigns.toggle_current_line_blame)
+			-- Keymap("n", "<leader>hb", function()
+			-- 	gitsigns.blame_line({ full = true })
+			-- end)
+			-- Keymap("n", "<leader>tb", gitsigns.toggle_current_line_blame)
 		end,
 	},
 }

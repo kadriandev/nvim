@@ -3,11 +3,11 @@ return {
 	opts = {},
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local width = 80
+		local width = 60
 		local height = 30
 		require("oil").setup({
 			float = {
-				padding = 0,
+				padding = 10,
 				max_width = width,
 				max_height = height,
 			},
@@ -36,6 +36,6 @@ return {
 			},
 		})
 
-		Keymap("n", "<leader>e", "<cmd>Oil<cr>", { desc = "which_key_ignore" })
+		Keymap("n", "<leader>e", "<cmd>lua require('oil').toggle_float(nil)<cr>", { desc = "which_key_ignore" })
 	end,
 }
