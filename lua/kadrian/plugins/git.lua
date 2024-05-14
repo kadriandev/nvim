@@ -7,7 +7,7 @@ return {
 			"nvim-telescope/telescope.nvim", -- optional
 		},
 		config = function()
-			require("neogit").setup()
+			require("neogit").setup({})
 			Keymap("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit" })
 			Keymap("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", { desc = "Open Diffview" })
 		end,
@@ -24,10 +24,6 @@ return {
 		config = function()
 			local gitsigns = require("gitsigns")
 			gitsigns.setup()
-			-- Keymap("n", "<leader>hb", function()
-			-- 	gitsigns.blame_line({ full = true })
-			-- end)
-			-- Keymap("n", "<leader>tb", gitsigns.toggle_current_line_blame)
 		end,
 	},
 }
