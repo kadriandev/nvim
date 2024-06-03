@@ -37,15 +37,13 @@ return {
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
-		opts = {
-			-- add any options here
-		},
+		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
+			-- "rcarriga/nvim-notify",
 		},
 		config = function()
-			require("notify").setup({ background_colour = "#FFFFFF" })
+			-- require("notify").setup({ background_colour = "#FFFFFF", timeout = 1 })
 			require("noice").setup({
 				lsp = {
 					-- override markdown rendering so that **cmp** and other plugins use **Treesitter**

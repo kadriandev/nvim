@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		"debugloop/telescope-undo.nvim",
 	},
 	config = function()
 		require("telescope").setup({
@@ -27,13 +28,16 @@ return {
 					override_generic_sorter = true, -- override the generic sorter
 					override_file_sorter = true, -- override the file sorter
 				},
+				undo = {},
 			},
 		})
 		require("telescope").load_extension("fzf")
+		require("telescope").load_extension("undo")
 
 		local builtin = require("telescope.builtin")
 		Keymap("n", "<leader>ff", builtin.find_files, { desc = "Files" })
 		Keymap("n", "<leader>ft", builtin.live_grep, { desc = "Text" })
+		Keymap("n", "<leader>fu", "<cmd>Telescope undo<cr>", { desc = "Undo" })
 		Keymap("n", "<leader>fg", builtin.git_files, { desc = "Git Files" })
 		Keymap("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 		Keymap("n", "<leader>fh", builtin.help_tags, { desc = "Help Tags" })

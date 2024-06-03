@@ -13,6 +13,8 @@ return {
 		"j-hui/fidget.nvim",
 		"L3MON4D3/LuaSnip",
 		"pmizio/typescript-tools.nvim",
+		"MunifTanjim/nui.nvim",
+		"OlegGulevskyy/better-ts-errors.nvim",
 	},
 	config = function()
 		require("fidget").setup({})
