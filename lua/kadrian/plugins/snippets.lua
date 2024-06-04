@@ -12,6 +12,9 @@ return {
 		require("scissors").setup({
 			snippetDir = "~/.config/nvim/lua/kadrian/snippets",
 			jsonFormatter = "jq",
+			telescope = {
+				alsoSearchSnippetBody = true,
+			},
 			editSnippetPopup = {
 				height = 0.4, -- relative to the window, number between 0 and 1
 				width = 0.6,
@@ -19,6 +22,7 @@ return {
 				keymaps = {
 					cancel = "q",
 					saveChanges = "<CR>", -- alternatively, can also use `:w`
+					duplicateSnippet = "<C-d>",
 					goBackToSearch = "<BS>",
 					deleteSnippet = "<C-x>",
 					openInFile = "<C-o>",

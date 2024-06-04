@@ -9,9 +9,9 @@ vim.opt.swapfile = false
 vim.opt.showmode = false
 
 vim.opt.expandtab = true
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.showcmd = false
 -- vim.opt.hlsearch = false
 vim.opt.incsearch = true
