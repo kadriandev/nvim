@@ -41,6 +41,7 @@ return {
 		Keymap("n", "<leader>fg", builtin.git_files, { desc = "Git Files" })
 		Keymap("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 		Keymap("n", "<leader>fh", builtin.help_tags, { desc = "Help Tags" })
+		Keymap("n", "<leader>fn", "<cmd>Noice telescope<cr>", { desc = "Notifications" })
 		Keymap("n", "<leader>fw", function()
 			local word = vim.fn.expand("<cword>")
 			builtin.grep_string({ search = word })

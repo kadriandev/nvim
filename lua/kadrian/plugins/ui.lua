@@ -63,10 +63,22 @@ return {
 				},
 			})
 
-			Keymap("n", "<esc>", "<cmd>Noice dismiss<cr>", { silent = true })
-			Keymap("n", "<leader>nt", "<cmd>Noice telescope<cr>", { silent = true })
 			Keymap("n", "<leader>ne", "<cmd>Noice enable<cr>", { silent = true })
 			Keymap("n", "<leader>nD", "<cmd>Noice disable<cr>", { silent = true })
 		end,
 	},
+	{
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup({
+				notification = {
+					window = {
+						winblend = 0,
+					},
+				},
+			})
+		end,
+	},
+	{ "MunifTanjim/nui.nvim" },
+	{ "OlegGulevskyy/better-ts-errors.nvim" },
 }
