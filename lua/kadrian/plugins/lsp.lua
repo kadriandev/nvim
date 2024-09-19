@@ -9,12 +9,12 @@ return {
 	config = function()
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "rust_analyzer", "tsserver" },
+			ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", "biome" },
 			handlers = {
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
 				end,
-				["tsserver"] = function()
+				["ts_ls"] = function()
 					require("typescript-tools").setup({
 						settings = {
 							expose_as_code_action = "all",

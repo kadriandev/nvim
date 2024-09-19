@@ -1,15 +1,8 @@
 return {
-	"L3MON4D3/LuaSnip",
-	-- follow latest release.
-	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-	-- install jsregexp (optional!).
-	build = "make install_jsregexp",
-	dependencies = {
-		"nvim-telescope/telescope.nvim", -- optional
+	{
 		"chrisgrieser/nvim-scissors",
-	},
-	config = function()
-		require("scissors").setup({
+		dependencies = { "nvim-telescope/telescope.nvim", "garymjr/nvim-snippets" },
+		opts = {
 			snippetDir = "~/.config/nvim/lua/kadrian/snippets",
 			jsonFormatter = "jq",
 			telescope = {
@@ -27,17 +20,29 @@ return {
 					deleteSnippet = "<C-x>",
 					openInFile = "<C-o>",
 					insertNextToken = "<C-t>", -- insert & normal mode
-					jumpBetweenBodyAndPrefix = "<C-Tab>", -- insert & normal mode
 				},
 			},
-		})
-		require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/lua/kadrian/snippets" } })
-		-- When used in visual mode prefills the selection as body.
-		Keymap({ "n", "x" }, "<leader>sa", function()
-			require("scissors").addNewSnippet()
-		end, { desc = "Add Snippet" })
-		Keymap("n", "<leader>se", function()
-			require("scissors").editSnippet()
-		end, { desc = "Edit Snippet" })
-	end,
+		},
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		version = "v2.*",
+		build = "make install_jsregexp",
+		dependencies = {
+			"nvim-telescope/telescope.nvim", -- optional
+			"chrisgrieser/nvim-scissors",
+		},
+		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load({
+				paths = { "~/.config/nvim/lua/kadrian/snippets" },
+			})
+			-- When used in visual mode prefills the selection as body.
+			Keymap({ "n", "x" }, "<leader>sa", function()
+				require("scissors").addNewSnippet()
+			end, { desc = "Add Snippet" })
+			Keymap("n", "<leader>se", function()
+				require("scissors").editSnippet()
+			end, { desc = "Edit Snippet" })
+		end,
+	},
 }

@@ -8,10 +8,10 @@ return {
 			-- Define your formatters
 			formatters_by_ft = {
 				lua = { "stylua" },
-				typescript = { { "prettierd", "prettier" } },
-				typescriptreact = { { "prettierd", "prettier" } },
-				javascript = { { "prettierd", "prettier" } },
-				javascriptreact = { { "prettierd", "prettier" } },
+				typescript = { "biome" },
+				typescriptreact = { "biome" },
+				javascript = { "biome" },
+				javascriptreact = { "biome" },
 			},
 			-- Set up format-on-save
 			format_on_save = { timeout_ms = 1000, lsp_fallback = false },
