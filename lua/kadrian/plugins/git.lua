@@ -17,7 +17,7 @@ return {
 		"FabijanZulj/blame.nvim",
 		config = function()
 			require("blame").setup()
-			Keymap("n", "<leader>gb", "<cmd>BlameToggle<cr>", { desc = "Toggle Git Blame" })
+			Keymap("n", "<leader>gB", "<cmd>BlameToggle<cr>", { desc = "Toggle Git Blame" })
 		end,
 	},
 	{
