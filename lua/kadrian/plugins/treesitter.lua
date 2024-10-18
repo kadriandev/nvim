@@ -16,9 +16,6 @@ return {
 				enable = true,
 				additional_vim_regex_highlighting = { "markdown" },
 			},
-			autotag = {
-				enable = true,
-			},
 			textsubjects = {
 				enable = true,
 				keymaps = {
