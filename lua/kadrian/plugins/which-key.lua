@@ -10,17 +10,14 @@ return {
 	},
 	config = function()
 		local wk = require("which-key")
-		wk.register({
-			f = { name = "Find" },
-			t = { name = "Terminal" },
-			c = { name = "Code" },
-			g = {
-				name = "Git",
-				d = { name = "Diffview" },
-			},
-			s = { name = "Snippets" },
-			n = { name = "Noice" },
-			q = { name = "which_key_ignore" },
-		}, { prefix = "<leader>" })
+		wk.add({
+			{ "<leader>c", group = "Code" },
+			{ "<leader>cs", group = "Snippets" },
+			{ "<leader>f", group = "Find" },
+			{ "<leader>g", group = "Git" },
+			{ "<leader>q", group = "which_key_ignore" },
+			{ "<leader>t", group = "Terminal" },
+			{ "<leader>u", group = "Toggles" },
+		})
 	end,
 }

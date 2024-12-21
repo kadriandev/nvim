@@ -1,42 +1,42 @@
-Keymap = vim.keymap.set
+vim.keymap.set = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-Keymap("n", "<esc>", "<cmd>Noice dismiss<cr><cmd>noh<cr>", { silent = true })
-Keymap("n", "<C-c>", "<cmd>AvanteToggle<cr>", { silent = true })
+vim.keymap.set("n", "<esc>", "<cmd>Noice dismiss<cr><cmd>noh<cr>", { silent = true })
+vim.keymap.set("n", "<C-c>", "<cmd>AvanteToggle<cr>", { silent = true })
 
-Keymap("n", "<leader>x", "<cmd>x<cr>", { silent = true, desc = "which_key_ignore" })
-Keymap("n", "<leader>X", "<cmd>tabclose<cr>", { silent = true, desc = "which_key_ignore" })
-Keymap("n", "<leader>qq", "<cmd>wqa<cr>", { silent = true, desc = "which_key_ignore" })
+vim.keymap.set("n", "<leader>x", "<cmd>x<cr>", { silent = true, desc = "which_key_ignore" })
+vim.keymap.set("n", "<leader>X", "<cmd>tabclose<cr>", { silent = true, desc = "which_key_ignore" })
+vim.keymap.set("n", "<leader>qq", "<cmd>wqa<cr>", { silent = true, desc = "which_key_ignore" })
 
-Keymap("i", "<C-h>", "<Left>", opts)
-Keymap("i", "<C-l>", "<Right>", opts)
-Keymap("i", "<C-j>", "<Down>", opts)
-Keymap("i", "<C-k>", "<Up>", opts)
+vim.keymap.set("i", "<C-h>", "<Left>", opts)
+vim.keymap.set("i", "<C-l>", "<Right>", opts)
+vim.keymap.set("i", "<C-j>", "<Down>", opts)
+vim.keymap.set("i", "<C-k>", "<Up>", opts)
 
-Keymap("n", "<C-u>", "<C-u>zz", opts)
-Keymap("n", "<C-d>", "<C-d>zz", opts)
+vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
+vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 
-Keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
-Keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 
-Keymap("x", "p", [[ "_dP]])
+vim.keymap.set("x", "p", [[ "_dP]])
 
-Keymap("n", "J", "mzJ`z", opts)
-Keymap("n", "n", "nzzzv", opts)
-Keymap("n", "N", "Nzzzv", opts)
-Keymap("n", "g*", "g*zz", opts)
-Keymap("n", "g#", "g#zz", opts)
+vim.keymap.set("n", "J", "mzJ`z", opts)
+vim.keymap.set("n", "n", "nzzzv", opts)
+vim.keymap.set("n", "N", "Nzzzv", opts)
+vim.keymap.set("n", "g*", "g*zz", opts)
+vim.keymap.set("n", "g#", "g#zz", opts)
 
-Keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
-Keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
+vim.keymap.set({ "n", "o", "x" }, "<s-h>", "^", opts)
+vim.keymap.set({ "n", "o", "x" }, "<s-l>", "g_", opts)
 
-Keymap("v", ">", ">gv", opts)
-Keymap("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
+vim.keymap.set("v", "<", "<gv", opts)
 
-Keymap("n", "<s-h>", "^", opts)
-Keymap("n", "<s-l>", "g_", opts)
+vim.keymap.set("n", "<s-h>", "^", opts)
+vim.keymap.set("n", "<s-l>", "g_", opts)
 
--- Global LSP Keymaps
-Keymap("n", "gl", vim.diagnostic.open_float)
-Keymap("n", "[d", vim.diagnostic.goto_prev)
-Keymap("n", "]d", vim.diagnostic.goto_next)
+-- Global LSP vim.keymap.sets
+vim.keymap.set("n", "gl", vim.diagnostic.open_float)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)

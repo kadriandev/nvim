@@ -19,8 +19,13 @@ return {
 					},
 				},
 			})
-			Keymap({ "v", "n" }, "<leader>ca", require("actions-preview").code_actions, { desc = "Code Actions" })
-			Keymap({ "n", "v" }, "<leader>cA", function()
+			vim.keymap.set(
+				{ "v", "n" },
+				"<leader>ca",
+				require("actions-preview").code_actions,
+				{ desc = "Code Actions" }
+			)
+			vim.keymap.set({ "n", "v" }, "<leader>cA", function()
 				require("actions-preview").code_actions({ context = { only = { "source" } } })
 			end, { desc = "Code Actions (File)" })
 		end,

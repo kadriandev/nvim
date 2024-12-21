@@ -9,15 +9,15 @@ return {
 		},
 		config = function()
 			require("neogit").setup({})
-			Keymap("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit" })
-			Keymap("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", { desc = "Open Diffview" })
+			vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit" })
+			vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", { desc = "Open Diffview" })
 		end,
 	},
 	{
 		"FabijanZulj/blame.nvim",
 		config = function()
 			require("blame").setup()
-			Keymap("n", "<leader>gB", "<cmd>BlameToggle<cr>", { desc = "Toggle Git Blame" })
+			vim.keymap.set("n", "<leader>gB", "<cmd>BlameToggle<cr>", { desc = "Toggle Git Blame" })
 		end,
 	},
 	{
