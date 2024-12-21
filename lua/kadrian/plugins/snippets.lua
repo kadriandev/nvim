@@ -37,10 +37,10 @@ return {
 				paths = { "~/.config/nvim/lua/kadrian/snippets" },
 			})
 			-- When used in visual mode prefills the selection as body.
-			Keymap({ "n", "x" }, "<leader>sa", function()
+			vim.keymap.set({ "n", "x" }, "<leader>csa", function()
 				require("scissors").addNewSnippet()
 			end, { desc = "Add Snippet" })
-			Keymap("n", "<leader>se", function()
+			vim.keymap.set("n", "<leader>cse", function()
 				require("scissors").editSnippet()
 			end, { desc = "Edit Snippet" })
 		end,

@@ -23,7 +23,7 @@ return {
 				},
 			},
 		})
-		Keymap("n", "<leader>cf", function()
+		vim.keymap.set("n", "<leader>cf", function()
 			require("conform").format({ async = true, lsp_fallback = false })
 		end, { desc = "Conform: Format" })
 	end,
