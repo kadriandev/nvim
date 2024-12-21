@@ -1,4 +1,3 @@
-vim.keymap.set = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<esc>", "<cmd>Noice dismiss<cr><cmd>noh<cr>", { silent = true })
@@ -32,9 +31,6 @@ vim.keymap.set({ "n", "o", "x" }, "<s-l>", "g_", opts)
 
 vim.keymap.set("v", ">", ">gv", opts)
 vim.keymap.set("v", "<", "<gv", opts)
-
-vim.keymap.set("n", "<s-h>", "^", opts)
-vim.keymap.set("n", "<s-l>", "g_", opts)
 
 -- Global LSP vim.keymap.sets
 vim.keymap.set("n", "gl", vim.diagnostic.open_float)
