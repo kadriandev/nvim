@@ -8,11 +8,11 @@ return {
 			-- Define your formatters
 			formatters_by_ft = {
 				lua = { "stylua" },
-				typescript = { { "prettier" } },
-				typescriptreact = { { "prettier" } },
-				javascript = { { "prettier" } },
-				javascriptreact = { { "prettier" } },
-				json = { { "prettier" } },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
+				javascript = { "prettier" },
+				javascriptreact = { "prettier" },
+				json = { "prettier" },
 			},
 			-- Set up format-on-save
 			format_on_save = { timeout_ms = 1000, lsp_fallback = false },
