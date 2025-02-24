@@ -26,6 +26,15 @@ return {
 			})
 		end,
 	},
+	{
+		"catgoose/nvim-colorizer.lua",
+		event = "BufReadPre",
+		opts = { -- set to setup table
+		},
+		config = function()
+			require("colorizer").setup()
+		end,
+	},
 	{ "MunifTanjim/nui.nvim" },
 	{ "OlegGulevskyy/better-ts-errors.nvim" },
 }
