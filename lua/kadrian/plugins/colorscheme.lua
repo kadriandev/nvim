@@ -84,6 +84,7 @@ return {
 						CmpItemKindCopilot = { fg = C.base, bg = C.teal },
 						PmenuSel = { bg = "#282C34", fg = "NONE" },
 						Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
+            LineNr = { fg = "#BBBBBB" }
 					}
 				end,
 			})
