@@ -36,3 +36,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  pattern = { "*.java" },
+  callback = function()
+    local _, _ = pcall(vim.lsp.codelens.refresh)
+  end,
+})

@@ -42,7 +42,6 @@ return {
 		vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Git Files" })
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help Tags" })
-		vim.keymap.set("n", "<leader>fn", "<cmd>Noice telescope<cr>", { desc = "Notifications" })
 		vim.keymap.set("n", "<leader>gb", builtin.git_branches, { desc = "Git Branches" })
 		vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Git Commits" })
 		vim.keymap.set("n", "<leader>fw", function()

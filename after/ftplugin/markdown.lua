@@ -1,3 +1,3 @@
 local setlocal = vim.opt_local
+setlocal.textwidth = 80
 
-setlocal.textwidth = 100
