@@ -15,22 +15,26 @@ return {
 
 		vim.keymap.set("n", "<leader>1", function()
 			harpoon:list():select(1)
-		end)
+		end, { desc = "which_key_ignore" })
+
 		vim.keymap.set("n", "<leader>2", function()
 			harpoon:list():select(2)
-		end)
+		end, { desc = "which_key_ignore" })
+
 		vim.keymap.set("n", "<leader>3", function()
 			harpoon:list():select(3)
-		end)
+		end, { desc = "which_key_ignore" })
+
 		vim.keymap.set("n", "<leader>4", function()
 			harpoon:list():select(4)
-		end)
+		end, { desc = "which_key_ignore" })
 
 		vim.keymap.set("n", "<C-n>", function()
 			harpoon:list():next()
-		end)
+		end, { desc = "which_key_ignore" })
+
 		vim.keymap.set("n", "<C-p>", function()
 			harpoon:list():prev()
-		end)
+		end, { desc = "which_key_ignore" })
 	end,
 }

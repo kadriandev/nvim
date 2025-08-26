@@ -14,6 +14,8 @@ return {
 				javascriptreact = { "prettier" },
 				json = { "prettier" },
 				yaml = { "prettier" },
+				xml = { "prettier" },
+				-- java = { "google-java-format" },
 			},
 			-- Set up format-on-save
 			format_on_save = { timeout_ms = 1000, lsp_fallback = false },
@@ -22,6 +24,9 @@ return {
 				shfmt = {
 					prepend_args = { "-i", "2" },
 				},
+				-- ["google-java-format"] = {
+				-- 	prepend_args = { "--aosp" }, -- Use AOSP style (4-space indentation)
+				-- },
 			},
 		})
 		vim.keymap.set("n", "<leader>cf", function()

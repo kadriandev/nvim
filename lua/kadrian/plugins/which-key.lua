@@ -14,6 +14,8 @@ return {
 			{ "<leader>c", group = "Code" },
 			{ "<leader>cs", group = "Snippets" },
 			{ "<leader>f", group = "Find" },
+			{ "<leader>d", group = "Diagnostics" },
+			{ "<leader>b", group = "Breakpoint" },
 			{ "<leader>g", group = "Git" },
 			{ "<leader>q", group = "which_key_ignore" },
 			{ "<leader>t", group = "Terminal" },
