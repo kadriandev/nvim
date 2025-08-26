@@ -1,6 +1,7 @@
 return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
+	enabled = false,
 	lazy = false,
 	enabled = false,
 	version = false, -- set this if you want to always pull the latest change
@@ -41,4 +42,8 @@ return {
 			ft = { "markdown", "Avante" },
 		},
 	},
+	config = function()
+		require("avante").setup({})
+		vim.keymap.set("n", "<C-c>", "<cmd>AvanteToggle<cr>", { silent = true })
+	end,
 }

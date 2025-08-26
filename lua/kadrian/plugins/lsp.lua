@@ -6,6 +6,7 @@ return {
 		"nvim-lspconfig",
 		"pmizio/typescript-tools.nvim",
 		"mfussenegger/nvim-dap",
+		"saghen/blink.cmp",
 	},
 	config = function()
 		require("mason").setup({})
@@ -13,13 +14,15 @@ return {
 			ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", "biome", "jdtls@1.48.0" },
 			handlers = {
 				function(server_name)
-					require("lspconfig")[server_name].setup({})
+					local capabilities = require("blink.cmp").get_lsp_capabilities()
+					require("lspconfig")[server_name].setup({ capabilies = capabilities })
 				end,
 				["jdtls"] = function()
 					-- jdtls initializion in ftplugin
 				end,
 				["groovyls"] = function()
 					require("lspconfig").groovyls.setup({
+						capabilies = require("blink.cmp").get_lsp_capabilities(),
 						cmd = {
 							"java",
 							"-jar",
@@ -29,6 +32,7 @@ return {
 				end,
 				["ts_ls"] = function()
 					require("typescript-tools").setup({
+						capabilies = require("blink.cmp").get_lsp_capabilities(),
 						settings = {
 							expose_as_code_action = "all",
 							separate_diagnostic_server = true,
@@ -39,6 +43,7 @@ return {
 				end,
 				["lua_ls"] = function()
 					require("lspconfig").lua_ls.setup({
+						capabilies = require("blink.cmp").get_lsp_capabilities(),
 						settings = {
 							Lua = {
 								runtime = {

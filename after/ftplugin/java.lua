@@ -44,10 +44,7 @@ local config = {
 	},
 	root_dir = vim.fs.root(0, { ".git", "mvnw", "gradlew", "pom.xml" }),
 	on_attach = function(client, bufnr)
-		-- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
-		-- you make during a debug session immediately.
-		-- Remove the option if you do not want that.
-		require("jdtls").setup_dap({ hotcodereplace = "auto" })
+		require("jdtls").setup_dap({ hotcodereplace = "auto", config_overrides = {} })
 
 		vim.keymap.set("n", "<leader>vc", jdtls.test_class, { desc = "Test class (DAP)" })
 		vim.keymap.set("n", "<leader>vm", jdtls.test_nearest_method, { desc = "Test method (DAP)" })

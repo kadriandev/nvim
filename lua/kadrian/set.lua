@@ -1,3 +1,5 @@
+vim.diagnostic.config({ virtual_text = true })
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -26,5 +28,6 @@ vim.opt.colorcolumn = "100"
 vim.opt.conceallevel = 1
 
 vim.opt.clipboard = "unnamed"
+vim.o.winborder = "rounded"
 
 vim.g.mapleader = " "

@@ -1,7 +1,6 @@
 return {
-    "mfussenegger/nvim-jdtls",
-    dependencies = {
-      'hrsh7th/cmp-nvim-lsp',
-      "mfussenegger/nvim-dap"
-    }
+	"mfussenegger/nvim-jdtls",
+	dependencies = {
+		"mfussenegger/nvim-dap",
+	},
 }

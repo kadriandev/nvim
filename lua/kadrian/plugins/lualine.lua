@@ -10,7 +10,7 @@ return {
 				theme = "catppuccin",
 			},
 			sections = {
-				lualine_c = { { "filename" }, { "filetype" } },
+				lualine_c = { "filename", "filetype" },
 				lualine_x = {
 					{
 						"harpoon2",
