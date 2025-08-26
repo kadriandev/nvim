@@ -5,9 +5,6 @@ return {
 		opts = {
 			snippetDir = "~/.config/nvim/lua/kadrian/snippets",
 			jsonFormatter = "jq",
-			telescope = {
-				alsoSearchSnippetBody = true,
-			},
 			editSnippetPopup = {
 				height = 0.4, -- relative to the window, number between 0 and 1
 				width = 0.6,
