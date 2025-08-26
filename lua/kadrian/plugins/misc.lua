@@ -1,5 +1,16 @@
 return {
 	{
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load on lua files
+		opts = {
+			library = {
+				-- See the configuration section for more details
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+	{
 		"aznhe21/actions-preview.nvim",
 		config = function()
 			require("actions-preview").setup({
@@ -36,7 +47,6 @@ return {
 			require("Comment").setup()
 		end,
 	},
-	{ "folke/neodev.nvim", opts = {} },
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features

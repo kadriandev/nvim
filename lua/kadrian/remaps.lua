@@ -1,6 +1,7 @@
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<esc>", "<cmd>noh<cr>", { silent = true })
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { silent = true, desc = "which_key_ignore" })
 
 vim.keymap.set("n", "<leader>x", "<cmd>x<cr>", { silent = true, desc = "which_key_ignore" })
 vim.keymap.set("n", "<leader>X", "<cmd>tabclose<cr>", { silent = true, desc = "which_key_ignore" })
@@ -33,8 +34,12 @@ vim.keymap.set("v", "<", "<gv", opts)
 
 -- Global LSP vim.keymap.sets
 vim.keymap.set("n", "gl", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump({ count = -1, float = true })
+end)
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump({ count = 1, float = true })
+end)
 
 vim.keymap.set("n", "<leader>da", "<cmd>lua require('dapui').continue()<cr>", { desc = "Attach DAP" })
 vim.keymap.set("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<cr>", { desc = "Open DAP Ui" })

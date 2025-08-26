@@ -20,10 +20,17 @@ return {
 				show_without_selection = false,
 				show_without_menu = true,
 			},
+			documentation = {
+				auto_show = true,
+				auto_show_delay_ms = 500,
+			},
 			menu = {
 				auto_show = true,
+				border = "single",
+				direction_priority = { "s", "n" },
 				draw = {
 					columns = { { "kind_icon" }, { "label", "label_description" }, { "kind" } },
+					align_to = "kind_icon",
 					components = {
 						kind = {
 							text = function(ctx)
@@ -60,11 +67,17 @@ return {
 				},
 			},
 		},
-
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
 			default = { "lsp", "buffer", "snippets", "path" },
+			providers = {
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					score_offset = 100, -- make lazydev completions top priority (see `:h blink.cmp`)
+				},
+			},
 		},
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},

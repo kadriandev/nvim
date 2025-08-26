@@ -11,7 +11,7 @@ return {
 	config = function()
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", "biome", "jdtls" },
+			ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", "biome", "jdtls@1.48.0" },
 			handlers = {
 				function(server_name)
 					local capabilities = require("blink.cmp").get_lsp_capabilities()
@@ -46,8 +46,20 @@ return {
 						capabilies = require("blink.cmp").get_lsp_capabilities(),
 						settings = {
 							Lua = {
+								runtime = {
+									-- Tell the language server which version of Lua you're using
+									-- (most likely LuaJIT in the case of Neovim)
+									version = "LuaJIT",
+								},
 								diagnostics = {
-									globals = { "vim" },
+									globals = { "vim", "require", "Snacks" },
+								},
+								workspace = {
+									-- Make the server aware of Neovim runtime files
+									library = vim.api.nvim_get_runtime_file("", true),
+								},
+								telemetry = {
+									enable = false,
 								},
 							},
 						},

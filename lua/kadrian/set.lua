@@ -28,5 +28,6 @@ vim.opt.colorcolumn = "100"
 vim.opt.conceallevel = 1
 
 vim.opt.clipboard = "unnamed"
+vim.o.winborder = "rounded"
 
 vim.g.mapleader = " "
