@@ -1,7 +1,6 @@
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<esc>", "<cmd>noh<cr>", { silent = true })
-vim.keymap.set("n", "<C-c>", "<cmd>AvanteToggle<cr>", { silent = true })
 
 vim.keymap.set("n", "<leader>x", "<cmd>x<cr>", { silent = true, desc = "which_key_ignore" })
 vim.keymap.set("n", "<leader>X", "<cmd>tabclose<cr>", { silent = true, desc = "which_key_ignore" })
