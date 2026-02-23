@@ -29,6 +29,14 @@ return {
 			harpoon:list():select(4)
 		end, { desc = "which_key_ignore" })
 
+		vim.keymap.set("n", "<leader>5", function()
+			harpoon:list():select(5)
+		end, { desc = "which_key_ignore" })
+
+		vim.keymap.set("n", "<leader>6", function()
+			harpoon:list():select(6)
+		end, { desc = "which_key_ignore" })
+
 		vim.keymap.set("n", "<C-n>", function()
 			harpoon:list():next()
 		end, { desc = "which_key_ignore" })

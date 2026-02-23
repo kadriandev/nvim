@@ -12,13 +12,15 @@ local java_test_path = vim.fn.expand("$MASON/packages/java-test")
 local bundles = {
 	vim.fn.glob(java_debug_path .. "/extension/server/com.microsoft.java.debug.plugin-*.jar"),
 }
-vim.list_extend(bundles, vim.split(java_test_path .. "/java-test/extension/server/*.jar", "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob(java_test_path .. "/extension/server/*.jar"), "\n"))
 
 local status, jdtls = pcall(require, "jdtls")
 if not status then
 	return
 end
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
+
+require("jdtls").setup_dap({ hotcodereplace = "auto", config_overrides = {} })
 
 local config = {
 	cmd = {
@@ -44,10 +46,10 @@ local config = {
 	},
 	root_dir = vim.fs.root(0, { ".git", "mvnw", "gradlew", "pom.xml" }),
 	on_attach = function(client, bufnr)
-		require("jdtls").setup_dap({ hotcodereplace = "auto", config_overrides = {} })
+		require("jdtls.dap").setup_dap_main_class_configs()
 
-		vim.keymap.set("n", "<leader>vc", jdtls.test_class, { desc = "Test class (DAP)" })
-		vim.keymap.set("n", "<leader>vm", jdtls.test_nearest_method, { desc = "Test method (DAP)" })
+		vim.keymap.set("n", "<leader>tc", jdtls.test_class, { desc = "Test class (DAP)" })
+		vim.keymap.set("n", "<leader>tm", jdtls.test_nearest_method, { desc = "Test method (DAP)" })
 	end,
 	settings = {
 		java = {
@@ -77,3 +79,5 @@ local config = {
 	},
 }
 require("jdtls").start_or_attach(config)
+
+vim.keymap.set("n", "<C-m>", "<cmd>Maven<cr>", { desc = "Maven Goals" })
